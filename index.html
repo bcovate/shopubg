@@ -1,1 +1,235 @@
-hello user!
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SHOPUBG</title>
+    
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+            background: #441540;
+        }
+        
+        #name {
+            color: rgba(255,255,255,0.8);
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 20vw;
+            font-size: 8vw;
+            font-weight: bold;
+    box-shadow: 0 0 2vw 0 rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+        }
+
+        #thumbnail {
+            margin: 5vw 0 0 0;
+            padding: 0;
+            width: 90vw;
+            height: 50vw;
+            background-image: url("file:///storage/emulated/0/Download/pubg-hd-background-a8lzrpdzi7ffija2.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 3vw;
+   box-shadow: 0 0 10vw 0 rgba(0,0,0,0.5);
+        }
+        
+        #title {
+            margin: 0;
+            padding: 5vw 0;
+            width: 80vw;
+            text-align: center;
+            font-size: 6vw;
+            font-weight: bold;
+            word-wrap: break-word;
+            color: #fff;
+            opacity: 80%;
+        }
+        
+        
+        #container {
+            background: rgba(0,0,0,0.2);
+            width: 100vw;
+            margin: 0;
+            padding: 0 0 5vw 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        
+        #card {
+            background: rgba(255,255,255,0.2);
+            width: 90vw;
+            border-radius: 2.5vw;
+            margin: 5vw 0 0 0;
+            display: flex;  
+            flex-direction: row;
+        }
+        
+        #ap {
+            box-sizing: border-box;
+            margin: 0; padding: 0 5vw;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+        
+        #espace1, #espace2 {
+            display: flex;
+            flex: 1;
+        }
+        
+        
+        #amount {
+            color: #fff;
+            margin: 0;
+            padding: 0 0 1vw 0;
+            font-size: 5vw;
+            font-weight: bold;
+            opacity: 80%;
+        }
+        
+        
+        
+        
+        #price {
+            color: #ffff00;
+            margin: 0;
+            padding: 0;
+            font-size: 5vw;
+            font-weight: bold;
+            text-align: right;
+            opacity: 70%;
+        }
+        
+        #buy {
+            background: #57d461;
+            margin: 2vw;
+            padding: 3.5vw;
+            width: 15vw;
+            height: 15vw;
+            content: url("file:///storage/emulated/0/Download/shopping-cart.png");
+            background-size: cover;
+            background-position: center;
+            border-radius: 2vw;
+            box-sizing: border-box;
+        }
+        
+        #buy:active {
+            filter:opacity(60%);
+        }
+        
+        
+        #sb {
+            width: 100%;
+            margin: 0;
+            padding: 4vw 0;
+            background: #000;
+            color: #ddd;
+            text-align: center;
+            font-size: 3vw;
+        }
+        
+        #bcvt {
+            color: #9b9;
+            text-align: center;
+            font-size: 3vw;
+        }
+        
+    </style>    
+    
+</head>
+<body>
+    
+    <p id="name">SHOPUBG</p>
+    <div id="thumbnail"></div>
+    <p id="title">BUY PUBG Unkknown Cash</p>
+    <div id="container"></div>
+    <p id="sb">Supported by <span id="bcvt">BCOVATE.com</span></p>
+    <script>
+        
+        
+const data = [
+  {
+    "amount": "30 + 3 UC",
+    "price": "5Dh"
+  },
+  {
+    "amount": "60 + 6 UC",
+    "price": "10Dh"
+  },{
+    "amount": "300 + 55 UC",
+    "price": "50Dh"
+  },
+  {
+    "amount": "600 + 120 UC",
+    "price": "95Dh"
+  },
+  {
+    "amount": "1500 + 450 UC",
+    "price": "235Dh"
+  },
+  {
+    "amount": "3000 + 1000 UC",
+    "price": "4Dh"
+  },
+  {
+    "amount": "6000 + 2400 UC",
+    "price": "1000Dh"
+  }
+];
+
+const container = document.getElementById('container');
+
+data.forEach(item => {
+
+  const espace1 = document.createElement('div');
+  espace1.id = 'espace1';
+  
+  const espace2 = document.createElement('div');
+  espace2.id = 'espace2';
+  
+  const card = document.createElement('div');
+  card.id = 'card';
+
+  const amount = document.createElement('p');
+  amount.id = 'amount';
+  amount.textContent = item.amount;
+
+
+  const ap = document.createElement('div');
+  ap.id = 'ap';
+
+  const price = document.createElement('p');
+  price.id = 'price';
+  price.textContent = item.price;
+
+  const buy = document.createElement('div');
+  buy.id = 'buy';
+  
+  ap.appendChild(espace1);
+  ap.appendChild(amount);
+  ap.appendChild(price);
+  ap.appendChild(espace2);
+  
+  card.appendChild(ap);
+  card.appendChild(buy);
+  
+  container.appendChild(card);
+});
+
+</script>
+</body>
+</html>
