@@ -7,11 +7,11 @@
     <style>
         
         @font-face {
-  font-family: font;
-  src: url(https://bcovate.com/src/font.ttf);
-}
+        font-family: font;
+        src: url(https://bcovate.com/src/font.ttf);
+        }
         
-        body {
+            body {
             margin: 0;
             padding: 0;
             width: 100vw;
@@ -20,26 +20,66 @@
             flex-direction: column;
             align-items: center;
             box-sizing: border-box;
-            background: #441540;
-        }
+            background: #202538;
+            }
         
-        #name {
-            color: rgba(255,255,255,0.8);
-            margin: 0;
-            padding: 0;
+            #topBar {
             width: 100%;
             height: 16vw;
-            font-size: 6vw;
-    box-shadow: 0 0 2vw 0 rgba(0,0,0,0.5);
+            display: flex;  
+            flex-direction: row;
+            box-shadow: 0 0 2vw 0 rgba(0,0,0,0.5);
+            background: #2e4b5e;
+            position: fixed;
+            z-index: 2;
+            }
+        
+            #logo {
+            width: 10vw;
+            height: 10vw;
+            margin: 3vw;
+            box-sizing: border-box;
+            background-image: url("https://files.catbox.moe/37hsub.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 1vw;
+            opacity: 80%;
+            }
+        
+            #name {
+            color: #fff;
+            opacity: 80%;
+            margin: 0;
+            padding: 0;
+            width: auto;
+            height: auto;
             display: flex;
-            justify-content: center;
+            flex: 1;
+            font-size: 6vw;
             align-items: center;
-            background: rgba(255,255,255,0.1);
             font-family: font;
-        }
+            }
 
-        #thumbnail {
-            margin: 5vw 0 0 0;
+            #more {
+            width: 16vw;
+            height: 16vw;
+            margin: 0;
+            padding: 5vw;
+            box-sizing: border-box;
+            content: url("https://files.catbox.moe/07to2z.png");
+            background-size: cover;
+            background-position: center;
+            border-radius: 8vw;
+            opacity: 80%;
+            filter:invert(100%);
+            }
+            
+        #more:active {
+        background: rgba(255,255,255,0.1);
+        }
+            
+            #thumbnail {
+            margin: 21vw 0 0 0;
             padding: 0;
             width: 90vw;
             height: 50vw;
@@ -47,199 +87,419 @@
             background-size: cover;
             background-position: center;
             border-radius: 3vw;
-   box-shadow: 0 0 10vw 0 rgba(0,0,0,0.5);
-        }
+            box-shadow: 0 0 10vw 0 rgba(0,0,0,0.5);
+            }
         
-        #title {
+            #title {
             margin: 5vw 0;
             padding: 0;
             width: 90vw;
+            height: auto;
             text-align: center;
-            font-size: 6vw;
+            font-size: 5vw;
             font-weight: bold;
             word-wrap: break-word;
             color: #fff;
             opacity: 80%;
             font-family: font;
-        }
+            }
         
-        
-        #container {
-            background: rgba(0,0,0,0.2);
+            #buttons {
             width: 100vw;
             margin: 0;
-            padding: 0 0 5vw 0;
+            padding: 3vw 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        
-        #card {
-            background: rgba(255,255,255,0.2);
-            width: 90vw;
-            border-radius: 2.5vw;
-            margin: 5vw 0 0 0;
-            display: flex;  
-            flex-direction: row;
-        }
-        
-        #ap {
+            flex-wrap: wrap;
+            gap: 6vw;
+            justify-content: center;
             box-sizing: border-box;
-            margin: 0; padding: 0 5vw;
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-        }
+            }
         
-        #espace1, #espace2 {
-            display: flex;
-            flex: 1;
-        }
-        
-        
-        #amount {
-            color: #fff;
+            #card {
+            background: #484d62;
+            width: 41vw;
+            height: auto;
+            border-radius: 2vw;
             margin: 0;
-            padding: 0 0 1vw 0;
+            }
+        
+            #card:active {
+            filter:opacity(60%);
+            }
+        
+            #amount {
+            color: #fff;
+            margin: 5vw 0 2vw 0;
+            padding: 0;
             font-size: 5vw;
             font-weight: bold;
             opacity: 80%;
             font-family: font;
-        }
+            text-align: center;
+            }
         
-        
-        
-        
-        #price {
-            color: #ffff00;
-            margin: 0;
+            #gift {
+            color: #747990;
+            margin: 0 0 4vw 0;
             padding: 0;
             font-size: 5vw;
-            font-weight: bold;
-            text-align: right;
-            opacity: 70%;
             font-family: font;
-        }
+            text-align: center;
+            }
         
-        #buy {
-            background: #57d461;
-            margin: 2vw;
-            padding: 3.5vw;
-            width: 15vw;
-            height: 15vw;
-            content: url("https://files.catbox.moe/fmrqk3.png");
-            background-size: cover;
-            background-position: center;
+            #inputs {
+            width: 90%;
+            background: rgba(255,255,255,0.2);
+            margin: 5vw;
+            padding: 0 0 3vw 0;
+            text-align: center;
             border-radius: 2vw;
+            box-shadow: 0 0 8vw 0 rgba(0,0,0,0.2);
+            }
+
+            #fullname, #id {
+            font-weight: bold;
+            color: #fff;
+            width: 75vw;
+            height: auto;
+            font-size: 4vw;
+            margin: 4vw auto 3vw auto;
+            padding: 0;
             box-sizing: border-box;
-        }
+            text-align: left;
+            opacity: 60%;
+            font-family: font;
+            }
+
+            #oblg {
+            color: #f00;
+            opacity: 80%;
+            }
+
+            #inputFullName, #inputId {
+            width: 80vw;
+            margin: 0 0 2vw 0;
+            padding: 3vw;
+            box-sizing: border-box;
+            background: #fff;
+            border: 0;
+            border-radius: 1vw;
+            opacity: 50%;
+            outline: none;
+            color: #444;
+            font-weight: bold;
+            font-size: 4.5vw;
+            }
         
-        #buy:active {
-            filter:opacity(60%);
-        }
+            ::placeholder {
+            color: #bbb;
+            }
         
+            #notice {
+            padding: 0;
+            margin: 1vw 0 0 0;
+            color: #a3a8c0;
+            font-size: 3vw;
+            font-family: font;
+            }
         
-        #sb {
+            #buy {
+            margin: 5vw 0 10vw 0;
+            padding: 5vw 0;
+            width: 90vw;
+            background: #3185a0;
+            box-sizing: border-box;
+            border-radius: 2vw;
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 5vw;
+            transition: background 0.2s ease;
+            font-family: font;
+            }
+        
+            #buy:active {
+            background: #31a085;            
+            }
+        
+            #sb {
             width: 100%;
+            height: auto;
             margin: 0;
             padding: 4vw 0;
             background: #000;
             color: #ddd;
             text-align: center;
-            font-size: 3vw;
+            font-size: 2vw;
             font-family: font;
-        }
+            }
         
-        #bcvt {
+            #bcvt {
             color: #9b9;
             text-align: center;
-            font-size: 3vw;
+            font-size: 2vw;
             font-family: font;
-        }
+            }
         
-    </style>    
-    
+      #toast {
+      width: 90vw;
+      margin: 0;
+      padding: 4vw 0;
+      background-color: #333;
+      color: #ddd;
+      text-align: center;
+      font-family: font;
+      font-size: 4vw;
+      border-radius: 2vw;
+      position: fixed;
+      z-index: 1;
+      bottom: 5vw;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      }
+  
+  #moreContainer {
+      position: fixed;
+      z-index: 1;
+      width: 50vw;
+      height: 0;
+      background: #484d62;
+      margin: 18vw 2vw 0 0;
+      right: 0;
+      padding: 0;
+      border-radius: 1vw;
+      box-shadow: 0 0 5vw 0 rgba(0,0,0,0.5);
+      transition: height 0.5s ease;
+      overflow: hidden;
+      box-sizing: border-box;
+  }
+  
+  #buttonMore {
+      margin: 0;
+      padding: 2vw 5vw 2vw 0;
+      text-align: right;
+      color: #a3a8c0;
+      transition: background 0.3s ease;
+      font-family: font;
+      font-size: 4vw;
+      font-weight: bold;
+  }
+  
+  #buttonMore:active {
+      background: rgba(255,255,255,0.05);
+  }
+  
+ #moreContainer > p:first-child {
+     margin: 3vw 0 0 0;
+ }
+ 
+ #moreContainer > p:last-child {
+     margin: 0 0 3vw 0;
+ }
+  
+</style>
 </head>
 <body>
-    
+    <div id="topBar">
+    <div id="logo"></div>
     <p id="name">SHOPUBG</p>
+    <div id="more"></div></div>
+    
     <div id="thumbnail"></div>
-    <p id="title">BUY PUBG Unkknown Cash</p>
-    <div id="container"></div>
-    <p id="sb">Supported by <span id="bcvt">BCOVATE.com</span></p>
+    <p id="title">PUBG Mobile-Direct Top-Up</p>
+    <div id="buttons"></div>
+    
+    <div id="inputs">
+  <p id="fullname">Full Name <span id="oblg">*</span></p>
+    <input type="text" id="inputFullName" placeholder="Bader Charaf">
+  <p id="id">PUBG ID <span id="oblg">*</span></p>
+    <input type="number" id="inputId" placeholder="Player ID">
+    <p id="notice">لتفادي الأخطاء، يرجى نسخ ولصق المعرف بدل كتابته يدويا</p>
+    </div>
+    
+  <p id="buy">BUY</p>
+    
+    
+    <p id="sb">Supported by <span id="bcvt">BCOVATE</span></p>
+    
+    <p id="toast"></p>
+    
+    <div id="moreContainer"></div>
     <script>
-        
-        
-const data = [
-  {
-    "amount": "30 + 3 UC",
-    "price": "5Dh"
-  },
-  {
-    "amount": "60 + 6 UC",
-    "price": "10Dh"
-  },{
-    "amount": "300 + 55 UC",
-    "price": "50Dh"
-  },
-  {
-    "amount": "600 + 120 UC",
-    "price": "100Dh"
-  },
-  {
-    "amount": "1500 + 450 UC",
-    "price": "250Dh"
-  },
-  {
-    "amount": "3000 + 1000 UC",
-    "price": "500Dh"
-  },
-  {
-    "amount": "6000 + 2400 UC",
-    "price": "1000Dh"
-  }
-];
 
-const container = document.getElementById('container');
+    var isSelect = false;
+    
+inputId.addEventListener('input', function() {
+    this.value = this.value.replace(/[^0123456789]/g, '');
+    });
+        
+      </script><script>
+        
+const data = [{
+    "amount": "60 UC",
+    "price": "10Dh",
+    "gift": "+6"
+  },{
+    "amount": "300 UC",
+    "price": "50Dh",
+    "gift": "+55"
+  },{
+    "amount": "600 UC",
+    "price": "100Dh",
+    "gift": "+120"
+  },{
+    "amount": "1500 UC",
+    "price": "250Dh",
+    "gift": "+450"
+  },{
+    "amount": "3000 UC",
+    "price": "500Dh",
+    "gift": "+1000"
+  },{
+    "amount": "6000 UC",
+    "price": "1000Dh",
+    "gift": "+2400"
+  }];
+
+
 
 data.forEach(item => {
 
-  const espace1 = document.createElement('div');
-  espace1.id = 'espace1';
-  
-  const espace2 = document.createElement('div');
-  espace2.id = 'espace2';
-  
   const card = document.createElement('div');
   card.id = 'card';
-
+  
   const amount = document.createElement('p');
   amount.id = 'amount';
   amount.textContent = item.amount;
 
-
-  const ap = document.createElement('div');
-  ap.id = 'ap';
-
-  const price = document.createElement('p');
-  price.id = 'price';
-  price.textContent = item.price;
-
-  const buy = document.createElement('div');
-  buy.id = 'buy';
+  const gift = document.createElement('p');
+  gift.id = 'gift';
+  gift.textContent = item.gift;
   
-  ap.appendChild(espace1);
-  ap.appendChild(amount);
-  ap.appendChild(price);
-  ap.appendChild(espace2);
   
-  card.appendChild(ap);
-  card.appendChild(buy);
+  card.appendChild(amount);
+  card.appendChild(gift);
+  buttons.appendChild(card);
   
-  container.appendChild(card);
+  card.addEventListener('click', function() {
+        
+  isSelect = item.amount;
+  buy.textContent = "BUY (" + item.price + ")";
+  
+ inputFullName.scrollIntoView({
+ behavior: 'smooth'
+  });
+ });
 });
 
+</script><script>
+    
+ buy.addEventListener('click', function() {
+
+    if (isSelect) {
+    if (inputFullName.value.length > 5) {
+    if (inputId.value.length > 8) {
+     
+     sendMessageToTelegram();
+     
+    } else {
+  Toast("please enter Valid PUBG ID");
+    } } else {
+  Toast("please add your Full Name");
+    } } else {
+  Toast("please select an amount");
+ 
+ thumbnail.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+
+
+    function sendMessageToTelegram() {
+var text = `NAME:  ${inputFullName.value}
+%0A
+- - - - - - - -
+%0A
+AMOUNT:  ${isSelect}
+%0A
+- - - - - - - -
+%0A
+ID:  ${inputId.value}`;
+
+window.location.href="whatsapp://send?phone=+212608050480&text=" + text;
+
+}
+
+</script><script>
+    
+    var moreHeight;
+    
+    setTimeout(function(){
+    moreHeight = moreContainer.scrollHeight;
+    }, 500);
+    
+    let showHide = 0;
+    more.addEventListener('click', function() {
+    
+    if (showHide === 0) {
+    moreContainer.style.height = moreHeight + "px";
+    showHide = 1;
+  } else {
+    moreContainer.style.height = "0";
+    showHide = 0;
+  }
+    });
+    
+</script><script>
+    
+    var dataMore = [
+  {
+    "title": "حول",
+    "path": "/about"
+  },
+  {
+    "title": "من نحن",
+    "path": "/who-are-we"
+  },
+  {
+    "title": "إتصل بنا",
+    "path": "/contact-us"
+  },
+  {
+    "title": "الهدايا",
+    "path": "/gifts"
+  },
+  {
+    "title": "مساعدة",
+    "path": "/help"
+  }
+];
+
+
+dataMore.forEach(item => {
+  var p = document.createElement('p');
+  p.textContent = item.title;
+  p.id = 'buttonMore';
+  
+ moreContainer.appendChild(p);
+ 
+ p.addEventListener('click', function() {
+    
+    moreContainer.style.height = "0";
+    showHide = 0;
+    window.open(item.path);
+  });
+});
+    
+</script><script>
+    
+    function Toast(error) {
+    toast.style.opacity = "1";
+    toast.textContent = error;
+      setTimeout(function(){
+        toast.style.opacity = "0";
+      }, 2000);
+}
+    
 </script>
 </body>
 </html>
