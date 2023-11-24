@@ -372,17 +372,25 @@ data.forEach(item => {
         
   isSelect = item.amount;
   buy.textContent = "BUY (" + item.price + ")";
-  
- buy.scrollIntoView({
+
+
+if (inputFullName.value.length > 6) {
+    if (inputId.value.length === 11) {
+buy.scrollIntoView({
  behavior: 'smooth'
-  }); }); });
+  });
+    } else {
+  scrollTo();
+    } } else {
+ scrollTo();
+    } }); });
 
 </script><script>
     
  buy.addEventListener('click', function() {
 
     if (inputFullName.value.length > 6) {
-    if (inputId.value.length === 9) {
+    if (inputId.value.length === 11) {
     if (isSelect) {
      sendData();
     } else {
