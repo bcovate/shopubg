@@ -69,7 +69,6 @@
             content: url("https://files.catbox.moe/07to2z.png");
             background-size: cover;
             background-position: center;
-            border-radius: 8vw;
             opacity: 80%;
             filter:invert(100%);
             }
@@ -77,6 +76,45 @@
         #more:active {
         background: rgba(255,255,255,0.1);
         }
+            
+      #moreContainer {
+      position: fixed;
+      z-index: 1;
+      width: 50vw;
+      height: 0;
+      background: #484d62;
+      margin: 18vw 2vw 0 0;
+      right: 0;
+      padding: 0;
+      border-radius: 1vw;
+      box-shadow: 0 0 5vw 0 rgba(0,0,0,0.5);
+      transition: height 0.3s ease;
+      overflow: hidden;
+      box-sizing: border-box;
+  }
+  
+  #buttonMore {
+      margin: 0;
+      padding: 2vw 5vw 2vw 0;
+      text-align: right;
+      color: #a3a8c0;
+      transition: background 0.3s ease;
+      font-family: font;
+      font-size: 4vw;
+      font-weight: bold;
+  }
+  
+  #buttonMore:active {
+      background: rgba(255,255,255,0.05);
+  }
+  
+ #moreContainer > p:first-child {
+     margin: 3vw 0 0 0;
+ }
+ 
+ #moreContainer > p:last-child {
+     margin: 0 0 3vw 0;
+ }
             
             #thumbnail {
             margin: 21vw 0 0 0;
@@ -87,7 +125,7 @@
             background-size: cover;
             background-position: center;
             border-radius: 3vw;
-            box-shadow: 0 0 10vw 0 rgba(0,0,0,0.5);
+            box-shadow: 0 0 10vw 0 rgba(0,0,0,0.3);
             }
         
             #title {
@@ -121,6 +159,7 @@
             height: auto;
             border-radius: 2vw;
             margin: 0;
+            box-shadow: 0 0 8vw 0 rgba(0,0,0,0.2);
             }
         
             #card:active {
@@ -189,6 +228,7 @@
             color: #444;
             font-weight: bold;
             font-size: 4.5vw;
+            box-shadow: 0 0 8vw 0 rgba(0,0,0,0.3);
             }
         
             ::placeholder {
@@ -205,39 +245,25 @@
         
             #buy {
             margin: 5vw 0 10vw 0;
-            padding: 5vw 0;
+            padding: 0;
             width: 90vw;
+            height: 15vw;
             background: #3185a0;
             box-sizing: border-box;
             border-radius: 2vw;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             color: rgba(255,255,255,0.8);
             font-size: 5vw;
             transition: background 0.2s ease;
             font-family: font;
+            box-shadow: 0 0 8vw 0 rgba(0,0,0,0.2);
             }
         
             #buy:active {
             background: #31a085;            
-            }
-        
-            #sb {
-            width: 100%;
-            height: auto;
-            margin: 0;
-            padding: 4vw 0;
-            background: #000;
-            color: #ddd;
-            text-align: center;
-            font-size: 2vw;
-            font-family: font;
-            }
-        
-            #bcvt {
-            color: #9b9;
-            text-align: center;
-            font-size: 2vw;
-            font-family: font;
             }
         
       #toast {
@@ -254,47 +280,9 @@
       z-index: 1;
       bottom: 5vw;
       opacity: 0;
+      display: none;
       transition: opacity 0.3s ease;
       }
-  
-  #moreContainer {
-      position: fixed;
-      z-index: 1;
-      width: 50vw;
-      height: 0;
-      background: #484d62;
-      margin: 18vw 2vw 0 0;
-      right: 0;
-      padding: 0;
-      border-radius: 1vw;
-      box-shadow: 0 0 5vw 0 rgba(0,0,0,0.5);
-      transition: height 0.5s ease;
-      overflow: hidden;
-      box-sizing: border-box;
-  }
-  
-  #buttonMore {
-      margin: 0;
-      padding: 2vw 5vw 2vw 0;
-      text-align: right;
-      color: #a3a8c0;
-      transition: background 0.3s ease;
-      font-family: font;
-      font-size: 4vw;
-      font-weight: bold;
-  }
-  
-  #buttonMore:active {
-      background: rgba(255,255,255,0.05);
-  }
-  
- #moreContainer > p:first-child {
-     margin: 3vw 0 0 0;
- }
- 
- #moreContainer > p:last-child {
-     margin: 0 0 3vw 0;
- }
   
 </style>
 </head>
@@ -305,21 +293,21 @@
     <div id="more"></div></div>
     
     <div id="thumbnail"></div>
-    <p id="title">PUBG Mobile-Direct Top-Up</p>
-    <div id="buttons"></div>
+    <p id="title">PUBG Mobile, Direct Top-Up</p>
     
     <div id="inputs">
   <p id="fullname">Full Name <span id="oblg">*</span></p>
     <input type="text" id="inputFullName" placeholder="Bader Charaf">
   <p id="id">PUBG ID <span id="oblg">*</span></p>
     <input type="number" id="inputId" placeholder="Player ID">
-    <p id="notice">لتفادي الأخطاء، يرجى نسخ ولصق المعرف بدل كتابته يدويا</p>
+    <p id="notice">من الأفضل نسخ ولصق المعرف بدل كتابته يدويا</p>
     </div>
     
+    <div id="buttons"></div>
+    
+    
+    
   <p id="buy">BUY</p>
-    
-    
-    <p id="sb">Supported by <span id="bcvt">BCOVATE</span></p>
     
     <p id="toast"></p>
     
@@ -329,7 +317,7 @@
     var isSelect = false;
     
 inputId.addEventListener('input', function() {
-    this.value = this.value.replace(/[^0123456789]/g, '');
+    this.value = this.value.replace(/[^0123456789]/g);
     });
         
       </script><script>
@@ -385,36 +373,34 @@ data.forEach(item => {
   isSelect = item.amount;
   buy.textContent = "BUY (" + item.price + ")";
   
- inputFullName.scrollIntoView({
+ buy.scrollIntoView({
  behavior: 'smooth'
-  });
- });
-});
+  }); }); });
 
 </script><script>
     
  buy.addEventListener('click', function() {
 
+    if (inputFullName.value.length > 6) {
+    if (inputId.value.length === 9) {
     if (isSelect) {
-    if (inputFullName.value.length > 5) {
-    if (inputId.value.length > 8) {
-     
-     sendMessageToTelegram();
-     
+     sendData();
     } else {
-  Toast("please enter Valid PUBG ID");
+   Toast("Please select an amount");
     } } else {
-  Toast("please add your Full Name");
+   Toast("please enter a valid PUBG ID");
+  scrollTo();
     } } else {
-  Toast("please select an amount");
- 
- thumbnail.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+   Toast("please enter your Full Name");
+ scrollTo();
+    } });
 
+  function scrollTo() {
+      thumbnail.scrollIntoView({
+      behavior: 'smooth'
+      }); }      
 
-
-    function sendMessageToTelegram() {
+    function sendData() {
 var text = `NAME:  ${inputFullName.value}
 %0A
 - - - - - - - -
@@ -446,13 +432,11 @@ window.location.href="whatsapp://send?phone=+212608050480&text=" + text;
   } else {
     moreContainer.style.height = "0";
     showHide = 0;
-  }
-    });
+  } });
     
 </script><script>
     
-    var dataMore = [
-  {
+    var dataMore = [{
     "title": "حول",
     "path": "/about"
   },
@@ -471,8 +455,7 @@ window.location.href="whatsapp://send?phone=+212608050480&text=" + text;
   {
     "title": "مساعدة",
     "path": "/help"
-  }
-];
+  }];
 
 
 dataMore.forEach(item => {
@@ -487,18 +470,18 @@ dataMore.forEach(item => {
     moreContainer.style.height = "0";
     showHide = 0;
     window.open(item.path);
-  });
-});
+  }); });
     
 </script><script>
     
     function Toast(error) {
     toast.style.opacity = "1";
+    toast.style.display = "block";
     toast.textContent = error;
       setTimeout(function(){
         toast.style.opacity = "0";
-      }, 2000);
-}
+        toast.style.display = "none";
+      }, 2000); }
     
 </script>
 </body>
