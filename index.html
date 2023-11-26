@@ -23,101 +23,26 @@
             background: #202538;
             }
         
-            #topBar {
+            #name {
+            color: #b6bdd6;
+            opacity:0.9;
+            margin: 0;
+            padding: 0 3vw 0 0;
             width: 100%;
-            height: 16vw;
-            display: flex;  
-            flex-direction: row;
+            height: 18vw;
+            display: flex;
+            font-size: 6vw;
+            align-items: center;
+            justify-content: center;
+            font-family: font;
             box-shadow: 0 0 2vw 0 rgba(0,0,0,0.5);
-            background: #2e4b5e;
+            background: #2e3652;
             position: fixed;
             z-index: 2;
             }
-        
-            #logo {
-            width: 10vw;
-            height: 10vw;
-            margin: 3vw;
-            box-sizing: border-box;
-            background-image: url("https://files.catbox.moe/37hsub.jpg");
-            background-size: cover;
-            background-position: center;
-            border-radius: 1vw;
-            opacity: 80%;
-            }
-        
-            #name {
-            color: #fff;
-            opacity: 80%;
-            margin: 0;
-            padding: 0;
-            width: auto;
-            height: auto;
-            display: flex;
-            flex: 1;
-            font-size: 6vw;
-            align-items: center;
-            font-family: font;
-            }
-
-            #more {
-            width: 16vw;
-            height: 16vw;
-            margin: 0;
-            padding: 5vw;
-            box-sizing: border-box;
-            content: url("https://files.catbox.moe/07to2z.png");
-            background-size: cover;
-            background-position: center;
-            opacity: 80%;
-            filter:invert(100%);
-            }
-            
-        #more:active {
-        background: rgba(255,255,255,0.1);
-        }
-            
-      #moreContainer {
-      position: fixed;
-      z-index: 1;
-      width: 50vw;
-      height: 0;
-      background: #484d62;
-      margin: 18vw 2vw 0 0;
-      right: 0;
-      padding: 0;
-      border-radius: 1vw;
-      box-shadow: 0 0 5vw 0 rgba(0,0,0,0.5);
-      transition: height 0.3s ease;
-      overflow: hidden;
-      box-sizing: border-box;
-  }
-  
-  #buttonMore {
-      margin: 0;
-      padding: 2vw 5vw 2vw 0;
-      text-align: right;
-      color: #a3a8c0;
-      transition: background 0.3s ease;
-      font-family: font;
-      font-size: 4vw;
-      font-weight: bold;
-  }
-  
-  #buttonMore:active {
-      background: rgba(255,255,255,0.05);
-  }
-  
- #moreContainer > p:first-child {
-     margin: 3vw 0 0 0;
- }
- 
- #moreContainer > p:last-child {
-     margin: 0 0 3vw 0;
- }
             
             #thumbnail {
-            margin: 21vw 0 0 0;
+            margin: 23vw 0 0 0;
             padding: 0;
             width: 90vw;
             height: 50vw;
@@ -160,10 +85,11 @@
             border-radius: 2vw;
             margin: 0;
             box-shadow: 0 0 8vw 0 rgba(0,0,0,0.2);
+            opacity: 0.5;
             }
         
             #card:active {
-            filter:opacity(60%);
+            opacity: 0.5;
             }
         
             #amount {
@@ -266,6 +192,62 @@
             background: #31a085;            
             }
         
+        #footer {
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            background: #111;
+        }
+
+  #copyright {
+      margin: 5vw 0 0 0;
+      padding: 0;      
+      color: #a3a8c0;
+      transition: background 0.3s ease;
+      font-family: font;
+      font-size: 3vw;
+      text-align: center;
+  }
+  
+      #sml {
+            margin: 0;
+            padding: 5vw;
+            display: flex;
+            justify-content: center;
+            gap: 3vw;
+        }
+        
+        #smb {
+            width: auto;
+            height: 10vw;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            border-radius: 1vw;
+            opacity: 80%;
+            border: 0.3vw solid #484d62;
+            background: #000;
+        }
+        
+        #smi {
+         width: 6vw;
+         height: 6vw;
+         box-sizing: border-box;
+         margin: 0 1vw 0 2vw;
+         padding: 0;
+        }
+        
+        #smt {
+            margin: 0 2vw 0 1vw;
+            padding: 0;
+            color: #fff;
+            font-size: 4vw;
+            font-family: font;
+            height: fit-content;
+        }
+        
       #toast {
       width: 90vw;
       margin: 0;
@@ -287,11 +269,7 @@
 </style>
 </head>
 <body>
-    <div id="topBar">
-    <div id="logo"></div>
-    <p id="name">SHOPUBG</p>
-    <div id="more"></div></div>
-    
+     <p id="name">SHOPUBG</p>
     <div id="thumbnail"></div>
     <p id="title">PUBG Mobile, Direct Top-Up</p>
     
@@ -300,7 +278,7 @@
     <input type="text" id="inputFullName" placeholder="Bader Charaf">
   <p id="id">PUBG ID <span id="oblg">*</span></p>
     <input type="number" id="inputId" placeholder="Player ID">
-    <p id="notice">من الأفضل نسخ ولصق المعرف بدل كتابته يدويا</p>
+    <p id="notice">نوصيك بنسخ ولصق المعرف بدل كتابته يدويا</p>
     </div>
     
     <div id="buttons"></div>
@@ -308,10 +286,14 @@
     
     
   <p id="buy">BUY</p>
-    
+  
+  <div id="footer">
+      <p id="copyright">© 2023 SHOPUBG. All Rights Reserved.</p>
+      <div id="sml"></div>
+  </div>
     <p id="toast"></p>
     
-    <div id="moreContainer"></div>
+    
     <script>
 
     var isSelect = false;
@@ -322,33 +304,38 @@ inputId.addEventListener('input', function() {
         
       </script><script>
         
-const data = [{
+const data = [
+  {
     "amount": "60 UC",
     "price": "10Dh",
     "gift": "+6"
-  },{
+  },
+  {
     "amount": "300 UC",
     "price": "50Dh",
     "gift": "+55"
-  },{
+  },
+  {
     "amount": "600 UC",
     "price": "100Dh",
     "gift": "+120"
-  },{
+  },
+  {
     "amount": "1500 UC",
     "price": "250Dh",
     "gift": "+450"
-  },{
+  },
+  {
     "amount": "3000 UC",
     "price": "500Dh",
     "gift": "+1000"
-  },{
+  },
+  {
     "amount": "6000 UC",
     "price": "1000Dh",
     "gift": "+2400"
-  }];
-
-
+  }
+];
 
 data.forEach(item => {
 
@@ -363,27 +350,33 @@ data.forEach(item => {
   gift.id = 'gift';
   gift.textContent = item.gift;
   
-  
   card.appendChild(amount);
   card.appendChild(gift);
   buttons.appendChild(card);
   
   card.addEventListener('click', function() {
+    const cards = document.querySelectorAll('#card');
+    
+    cards.forEach(otherCard => {
+        otherCard.style.opacity = "";
+    });
+
+        card.style.opacity = "1";
         
-  isSelect = item.amount;
-  buy.textContent = "BUY (" + item.price + ")";
+    isSelect = item.amount;
+    buy.textContent = "BUY (" + item.price + ")";
 
-
-if (inputFullName.value.length > 6) {
-    if (inputId.value.length === 11) {
-buy.scrollIntoView({
- behavior: 'smooth'
-  });
+    if (inputFullName.value.length > 6) {
+      if (inputId.value.length === 11) {
+        buy.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        scrollTo();
+      }
     } else {
-  scrollTo();
-    } } else {
- scrollTo();
-    } }); });
+      scrollTo();
+    }
+  });
+});
 
 </script><script>
     
@@ -395,91 +388,79 @@ buy.scrollIntoView({
      sendData();
     } else {
    Toast("Please select an amount");
+   inputId.scrollIntoView({
+      behavior: 'smooth'
+      });
     } } else {
    Toast("please enter a valid PUBG ID");
   scrollTo();
     } } else {
-   Toast("please enter your Full Name");
+   Toast("Please enter your Full Name");
  scrollTo();
     } });
 
   function scrollTo() {
       thumbnail.scrollIntoView({
       behavior: 'smooth'
-      }); }      
+      }); }
 
     function sendData() {
-var text = `NAME:  ${inputFullName.value}
-%0A
-- - - - - - - -
-%0A
+var text = `whatsapp://send?phone=+212608050480&text=NAME:  ${inputFullName.value}
+%0A- - - - - - - -%0A
 AMOUNT:  ${isSelect}
-%0A
-- - - - - - - -
-%0A
+%0A- - - - - - - -%0A
 ID:  ${inputId.value}`;
 
-window.location.href="whatsapp://send?phone=+212608050480&text=" + text;
-
+window.location.href=text;
 }
 
 </script><script>
-    
-    var moreHeight;
-    
-    setTimeout(function(){
-    moreHeight = moreContainer.scrollHeight;
-    }, 500);
-    
-    let showHide = 0;
-    more.addEventListener('click', function() {
-    
-    if (showHide === 0) {
-    moreContainer.style.height = moreHeight + "px";
-    showHide = 1;
-  } else {
-    moreContainer.style.height = "0";
-    showHide = 0;
-  } });
-    
-</script><script>
-    
-    var dataMore = [{
-    "title": "حول",
-    "path": "/about"
-  },
-  {
-    "title": "من نحن",
-    "path": "/who-are-we"
-  },
-  {
-    "title": "إتصل بنا",
-    "path": "/contact-us"
-  },
-  {
-    "title": "الهدايا",
-    "path": "/gifts"
-  },
-  {
-    "title": "مساعدة",
-    "path": "/help"
-  }];
+		
+const socialMediaList = [{
+  "link":"https://instagram.com/shopubg.store",
+  "name":"41r0x5",
+  "title":"Follow Us",
+  "color":"#c80074"
+},{
+  "link":"whatsapp://channel/0029VaG5FZU6xCSV5sNCKe1I",
+  "name":"hum2c1",
+  "title":"Our Channel",
+  "color":"#009600"
+}];
 
 
-dataMore.forEach(item => {
-  var p = document.createElement('p');
-  p.textContent = item.title;
-  p.id = 'buttonMore';
+socialMediaList.forEach(item => {
   
- moreContainer.appendChild(p);
- 
- p.addEventListener('click', function() {
-    
-    moreContainer.style.height = "0";
-    showHide = 0;
-    window.open(item.path);
-  }); });
-    
+  const smb = document.createElement('div');
+  smb.id = 'smb';
+  
+  const smi = document.createElement('div');
+  smi.id = 'smi';
+  
+  const smt = document.createElement('p');
+  smt.id = 'smt';
+
+  var url = 'url("https://files.catbox.moe/' + item.name + '.png")';
+  
+  smi.style.content = url;
+  smt.textContent = item.title;
+  
+  smb.appendChild(smi);
+  smb.appendChild(smt);
+  sml.appendChild(smb);
+  smb.addEventListener('click', () => {
+  window.open(item.link);
+  });
+  
+  smb.addEventListener('touchstart', () => {
+  smb.style.backgroundColor = item.color;
+  });
+
+  smb.addEventListener('touchend', () => {
+  smb.style.backgroundColor = "#000";
+  });
+ });
+
 </script><script>
     
     function Toast(error) {
