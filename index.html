@@ -29,7 +29,7 @@
             margin: 0;
             padding: 0 3vw 0 0;
             width: 100%;
-            height: 18vw;
+            height: 16vw;
             display: flex;
             font-size: 6vw;
             align-items: center;
@@ -39,6 +39,7 @@
             background: #2e3652;
             position: fixed;
             z-index: 2;
+            transition: opacity 0.3s ease;
             }
             
             #thumbnail {
@@ -51,6 +52,7 @@
             background-position: center;
             border-radius: 3vw;
             box-shadow: 0 0 10vw 0 rgba(0,0,0,0.3);
+            transition: opacity 0.3s ease;
             }
         
             #title {
@@ -62,54 +64,9 @@
             font-size: 5vw;
             font-weight: bold;
             word-wrap: break-word;
-            color: #fff;
-            opacity: 80%;
+            color: #a3a8c0;
             font-family: font;
-            }
-        
-            #buttons {
-            width: 100vw;
-            margin: 0;
-            padding: 3vw 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6vw;
-            justify-content: center;
-            box-sizing: border-box;
-            }
-        
-            #card {
-            background: #484d62;
-            width: 41vw;
-            height: auto;
-            border-radius: 2vw;
-            margin: 0;
-            box-shadow: 0 0 8vw 0 rgba(0,0,0,0.2);
-            opacity: 0.5;
-            }
-        
-            #card:active {
-            opacity: 0.5;
-            }
-        
-            #amount {
-            color: #fff;
-            margin: 5vw 0 2vw 0;
-            padding: 0;
-            font-size: 5vw;
-            font-weight: bold;
-            opacity: 80%;
-            font-family: font;
-            text-align: center;
-            }
-        
-            #gift {
-            color: #747990;
-            margin: 0 0 4vw 0;
-            padding: 0;
-            font-size: 5vw;
-            font-family: font;
-            text-align: center;
+            transition: opacity 0.3s ease;
             }
         
             #inputs {
@@ -120,6 +77,7 @@
             text-align: center;
             border-radius: 2vw;
             box-shadow: 0 0 8vw 0 rgba(0,0,0,0.2);
+            transition: opacity 0.3s ease;
             }
 
             #fullname, #id {
@@ -174,7 +132,7 @@
             padding: 0;
             width: 90vw;
             height: 15vw;
-            background: #3185a0;
+            background: #31a085;
             box-sizing: border-box;
             border-radius: 2vw;
             text-align: center;
@@ -189,9 +147,74 @@
             }
         
             #buy:active {
-            background: #31a085;            
+            background: #3185a0;
+            }
+
+            #buttons {
+            width: 100vw;
+            margin: 0;
+            padding: 3vw 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6vw;
+            justify-content: center;
+            box-sizing: border-box;
             }
         
+            #card {
+            background: #484d62;
+            width: 41vw;
+            height: auto;
+            border-radius: 2vw;
+            margin: 0;
+            box-shadow: 0 0 8vw 0 rgba(0,0,0,0.2);
+            opacity: 0.5;
+            }
+        
+            #card:active {
+            opacity: 1;
+            }
+        
+            #amount {
+            color: #a3a8c0;
+            margin: 5vw 0 2vw 0;
+            padding: 0;
+            font-size: 5vw;
+            font-weight: bold;
+            opacity: 90%;
+            font-family: font;
+            text-align: center;
+            }
+        
+            #gift {
+            color: #747990;
+            margin: 0 0 4vw 0;
+            padding: 0;
+            font-size: 5vw;
+            font-family: font;
+            text-align: center;
+            }
+        
+        #line {
+            
+            background: #a3a8c0;
+            width: auto;
+            height: 0.3vw;
+            margin: 0 3vw;
+            box-sizing: border-box;
+        }
+        
+        #price {
+            
+            text-align: center;
+            color: #a3a8c0;
+            margin: 3vw 0;
+            padding: 0;
+            font-size: 4vw;
+            font-weight: bold;
+            font-family: font;
+        }
+
         #footer {
             width: 100%;
             height: auto;
@@ -261,9 +284,9 @@
       position: fixed;
       z-index: 1;
       bottom: 5vw;
+      pointer-events: none;
       opacity: 0;
-      display: none;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
       }
   
 </style>
@@ -282,11 +305,9 @@
     </div>
     
     <div id="buttons"></div>
-    
-    
-    
-  <p id="buy">BUY</p>
-  
+
+  <p id="buy">Order via WhatsApp</p>
+
   <div id="footer">
       <p id="copyright">© 2023 SHOPUBG. All Rights Reserved.</p>
       <div id="sml"></div>
@@ -295,8 +316,6 @@
     
     
     <script>
-
-    var isSelect = false;
     
 inputId.addEventListener('input', function() {
     this.value = this.value.replace(/[^0123456789]/g);
@@ -337,6 +356,8 @@ const data = [
   }
 ];
 
+  var isSelect = false;
+
 data.forEach(item => {
 
   const card = document.createElement('div');
@@ -350,8 +371,17 @@ data.forEach(item => {
   gift.id = 'gift';
   gift.textContent = item.gift;
   
+  const line = document.createElement('div');
+  line.id = 'line';
+  
+  const price = document.createElement('p');
+  price.id = 'price';
+  price.textContent = item.price;
+  
   card.appendChild(amount);
   card.appendChild(gift);
+  card.appendChild(line);
+  card.appendChild(price);
   buttons.appendChild(card);
   
   card.addEventListener('click', function() {
@@ -363,9 +393,8 @@ data.forEach(item => {
 
         card.style.opacity = "1";
         
-    isSelect = item.amount;
-    buy.textContent = "BUY (" + item.price + ")";
-
+    isSelect = true;
+    
     if (inputFullName.value.length > 6) {
       if (inputId.value.length === 11) {
         buy.scrollIntoView({ behavior: 'smooth' });
@@ -465,12 +494,44 @@ socialMediaList.forEach(item => {
     
     function Toast(error) {
     toast.style.opacity = "1";
-    toast.style.display = "block";
     toast.textContent = error;
       setTimeout(function(){
-        toast.style.opacity = "0";
-        toast.style.display = "none";
+    toast.style.opacity = "0";
       }, 2000); }
+
+</script><script>
+
+window.addEventListener('scroll', function() {
+  
+  let scrolled = (window.scrollY * 100) / window.innerWidth;
+  
+  var name = document.getElementById("name");
+  
+  if (scrolled > 7) {
+   name.style.opacity = "0";
+  } else {
+      name.style.opacity = "1";
+  }
+  
+  if (scrolled > 60) {
+   thumbnail.style.opacity = "0";
+  } else {
+      thumbnail.style.opacity = "1";
+  }
+  
+  if (scrolled > 75) {
+   title.style.opacity = "0";
+  } else {
+      title.style.opacity = "1";
+  }
+  
+  if (scrolled > 140) {
+   inputs.style.opacity = "0";
+  } else {
+      inputs.style.opacity = "1";
+  }
+  
+});
     
 </script>
 </body>
