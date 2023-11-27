@@ -14,75 +14,75 @@
             body {
             margin: 0;
             padding: 0;
-            width: 100vw;
             user-select: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             box-sizing: border-box;
             background: #202538;
-            }
-        
-            #name {
-            color: #b6bdd6;
-            opacity:0.9;
-            margin: 0;
-            padding: 0 3vw 0 0;
-            width: 100%;
-            height: 16vw;
             display: flex;
-            font-size: 6vw;
-            align-items: center;
-            justify-content: center;
-            font-family: font;
-            box-shadow: 0 0 2vw 0 rgba(0,0,0,0.5);
-            background: #2e3652;
-            position: fixed;
-            z-index: 2;
-            transition: opacity 0.3s ease;
+            flex-direction: column;
             }
             
             #thumbnail {
-            margin: 23vw 0 0 0;
+            margin: 0;
             padding: 0;
-            width: 90vw;
-            height: 50vw;
+            width: 100vw;
+            height: 55vw;
             background-image: url("https://files.catbox.moe/k91ca4.jpg");
             background-size: cover;
             background-position: center;
-            border-radius: 3vw;
-            box-shadow: 0 0 10vw 0 rgba(0,0,0,0.3);
-            transition: opacity 0.3s ease;
+            }
+        
+        #background {
+            background: #2e3652;
+            opacity: 80%;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #name {
+            color: #ccc;
+            margin: 4vw 0 0 6vw;
+            padding: 0;
+            width: fit-content;
+            height: auto;
+            font-size: 6vw;
+            font-family: font;
+            font-weight: bold;
             }
         
             #title {
-            margin: 5vw 0;
+            margin: 0 0 7vw 0;
             padding: 0;
-            width: 90vw;
-            height: auto;
-            text-align: center;
+            width: 100%;
+            height: 100%;
             font-size: 5vw;
             font-weight: bold;
             word-wrap: break-word;
-            color: #a3a8c0;
+            color: #ccc;
             font-family: font;
-            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             }
         
             #inputs {
             width: 90%;
-            background: rgba(255,255,255,0.2);
-            margin: 5vw;
+            height: auto;
+            background: #484d62;
+            margin: 0 5vw 0 5vw;
             padding: 0 0 3vw 0;
             text-align: center;
             border-radius: 2vw;
-            box-shadow: 0 0 8vw 0 rgba(0,0,0,0.2);
-            transition: opacity 0.3s ease;
+            box-shadow: 0 0 8vw 0 rgba(0,0,0,0.4);
+            transform:translateY(-5vw);
             }
 
             #fullname, #id {
             font-weight: bold;
-            color: #fff;
+            color: rgba(255,255,255,0.6);
             width: 75vw;
             height: auto;
             font-size: 4vw;
@@ -90,13 +90,11 @@
             padding: 0;
             box-sizing: border-box;
             text-align: left;
-            opacity: 60%;
             font-family: font;
             }
 
             #oblg {
-            color: #f00;
-            opacity: 80%;
+            color: rgba(255,0,0,0.8);            
             }
 
             #inputFullName, #inputId {
@@ -104,19 +102,18 @@
             margin: 0 0 2vw 0;
             padding: 3vw;
             box-sizing: border-box;
-            background: #fff;
-            border: 0;
+            background: none;
+            border: 0.5vw solid rgba(255,255,255,0.4);
             border-radius: 1vw;
-            opacity: 50%;
             outline: none;
-            color: #444;
+            color: rgba(255,255,255,0.6);
             font-weight: bold;
             font-size: 4.5vw;
-            box-shadow: 0 0 8vw 0 rgba(0,0,0,0.3);
+            box-shadow: 0 0 8vw 0 rgba(0,0,0,0.1);
             }
         
             ::placeholder {
-            color: #bbb;
+            color: rgba(255,255,255,0.2);
             }
         
             #notice {
@@ -126,39 +123,16 @@
             font-size: 3vw;
             font-family: font;
             }
-        
-            #buy {
-            margin: 5vw 0 10vw 0;
-            padding: 0;
-            width: 90vw;
-            height: 15vw;
-            background: #31a085;
-            box-sizing: border-box;
-            border-radius: 2vw;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: rgba(255,255,255,0.8);
-            font-size: 5vw;
-            transition: background 0.2s ease;
-            font-family: font;
-            box-shadow: 0 0 8vw 0 rgba(0,0,0,0.2);
-            }
-        
-            #buy:active {
-            background: #3185a0;
-            }
 
             #buttons {
-            width: 100vw;
+            width: auto;
+            height: auto;
             margin: 0;
-            padding: 3vw 0;
+            padding: 3vw 0 0 0;
             display: flex;
             flex-wrap: wrap;
             gap: 6vw;
             justify-content: center;
-            box-sizing: border-box;
             }
         
             #card {
@@ -167,8 +141,9 @@
             height: auto;
             border-radius: 2vw;
             margin: 0;
+            padding: 0;
             box-shadow: 0 0 8vw 0 rgba(0,0,0,0.2);
-            opacity: 0.5;
+            opacity: 0.6;
             }
         
             #card:active {
@@ -196,7 +171,6 @@
             }
         
         #line {
-            
             background: #a3a8c0;
             width: auto;
             height: 0.3vw;
@@ -205,7 +179,6 @@
         }
         
         #price {
-            
             text-align: center;
             color: #a3a8c0;
             margin: 3vw 0;
@@ -214,9 +187,31 @@
             font-weight: bold;
             font-family: font;
         }
+        
+        #buy {
+            margin: 10vw auto;
+            padding: 0;
+            width: 90vw;
+            height: 15vw;
+            background: #31a085;
+            box-sizing: border-box;
+            border-radius: 2vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 5vw;
+            font-family: font;
+            transition: background 0.4s ease;
+            }
+        
+            #buy:active {
+            background: #3185a0;
+            }
 
         #footer {
-            width: 100%;
+            width: 100vw;
             height: auto;
             margin: 0;
             padding: 0;
@@ -229,7 +224,7 @@
       color: #a3a8c0;
       transition: background 0.3s ease;
       font-family: font;
-      font-size: 2vw;
+      font-size: 3vw;
       text-align: center;
   }
   
@@ -272,8 +267,8 @@
         }
         
       #toast {
-      width: 90vw;
-      margin: 0;
+      width: 90%;
+      margin: 0 5vw;
       padding: 4vw 0;
       background-color: #333;
       color: #ddd;
@@ -287,15 +282,19 @@
       pointer-events: none;
       opacity: 0;
       transition: opacity 0.4s ease;
+      box-sizing: border-box;
       }
   
 </style>
 </head>
 <body>
-     <p id="name">SHOPUBG</p>
-    <div id="thumbnail"></div>
-    <p id="title">PUBG Mobile, Direct Top-Up</p>
-    
+    <div id="thumbnail">
+        <div id="background">
+            <p id="name">SHOPUBG</p>
+ <p id="title">PUBG Mobile, Direct Top-Up</p>
+        </div>
+    </div>
+        
     <div id="inputs">
   <p id="fullname">Full Name <span id="oblg">*</span></p>
     <input type="text" id="inputFullName" placeholder="Bader Charaf">
@@ -323,38 +322,31 @@ inputId.addEventListener('input', function() {
         
       </script><script>
         
-const data = [
-  {
+const data = [{
     "amount": "60 UC",
     "price": "10Dh",
     "gift": "+6"
-  },
-  {
+  },{
     "amount": "300 UC",
     "price": "50Dh",
     "gift": "+55"
-  },
-  {
+  },{
     "amount": "600 UC",
     "price": "100Dh",
     "gift": "+120"
-  },
-  {
+  },{
     "amount": "1500 UC",
     "price": "250Dh",
     "gift": "+450"
-  },
-  {
+  },{
     "amount": "3000 UC",
     "price": "500Dh",
     "gift": "+1000"
-  },
-  {
+  },{
     "amount": "6000 UC",
     "price": "1000Dh",
     "gift": "+2400"
-  }
-];
+  }];
 
   var isSelect = false;
 
@@ -453,10 +445,9 @@ const socialMediaList = [{
 },{
   "link":"whatsapp://channel/0029VaG5FZU6xCSV5sNCKe1I",
   "name":"hum2c1",
-  "title":"Our Channel",
+  "title":"Join Our Channel",
   "color":"#009600"
 }];
-
 
 socialMediaList.forEach(item => {
   
@@ -499,40 +490,6 @@ socialMediaList.forEach(item => {
     toast.style.opacity = "0";
       }, 2000); }
 
-</script><script>
-
-window.addEventListener('scroll', function() {
-  
-  let scrolled = (window.scrollY * 100) / window.innerWidth;
-  
-  var name = document.getElementById("name");
-  
-  if (scrolled > 7) {
-   name.style.opacity = "0";
-  } else {
-      name.style.opacity = "1";
-  }
-  
-  if (scrolled > 60) {
-   thumbnail.style.opacity = "0";
-  } else {
-      thumbnail.style.opacity = "1";
-  }
-  
-  if (scrolled > 75) {
-   title.style.opacity = "0";
-  } else {
-      title.style.opacity = "1";
-  }
-  
-  if (scrolled > 140) {
-   inputs.style.opacity = "0";
-  } else {
-      inputs.style.opacity = "1";
-  }
-  
-});
-    
 </script>
 </body>
 </html>
