@@ -46,7 +46,7 @@
             color: #ccc;
             margin: 4vw 0 0 6vw;
             padding: 0;
-            width: fit-content;
+            width: auto;
             height: auto;
             font-size: 6vw;
             font-family: font;
@@ -120,7 +120,7 @@
             padding: 0;
             margin: 1vw 0 0 0;
             color: #a3a8c0;
-            font-size: 3vw;
+            font-size: 3.5vw;
             font-family: font;
             }
 
@@ -143,7 +143,8 @@
             margin: 0;
             padding: 0;
             box-shadow: 0 0 8vw 0 rgba(0,0,0,0.2);
-            opacity: 0.6;
+            border: 0.5vw solid transparent;
+            box-sizing: border-box;
             }
         
             #card:active {
@@ -380,24 +381,19 @@ data.forEach(item => {
     const cards = document.querySelectorAll('#card');
     
     cards.forEach(otherCard => {
-        otherCard.style.opacity = "";
+        otherCard.style.border = "";
     });
 
-        card.style.opacity = "1";
+        card.style.border = "0.5vw solid rgba(255,255,255,0.5)";
         
-    isSelect = true;
+    isSelect = item.amount;
     
     if (inputFullName.value.length > 6) {
       if (inputId.value.length === 11) {
-        buy.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        scrollTo();
-      }
-    } else {
-      scrollTo();
-    }
-  });
-});
+buy.scrollIntoView({ behavior: 'smooth' });
+      } else { scrollTo(); }
+    } else { scrollTo(); }
+  }); });
 
 </script><script>
     
@@ -409,9 +405,7 @@ data.forEach(item => {
      sendData();
     } else {
    Toast("Please select an amount");
-   inputId.scrollIntoView({
-      behavior: 'smooth'
-      });
+buttons.scrollIntoView({behavior: 'smooth'});
     } } else {
    Toast("please enter a valid PUBG ID");
   scrollTo();
@@ -421,9 +415,8 @@ data.forEach(item => {
     } });
 
   function scrollTo() {
-      thumbnail.scrollIntoView({
-      behavior: 'smooth'
-      }); }
+thumbnail.scrollIntoView({behavior: 'smooth'});
+      }
 
     function sendData() {
 var text = `whatsapp://send?phone=+212608050480&text=NAME:  ${inputFullName.value}
@@ -478,8 +471,7 @@ socialMediaList.forEach(item => {
 
   smb.addEventListener('touchend', () => {
   smb.style.backgroundColor = "#000";
-  });
- });
+  }); });
 
 </script><script>
     
