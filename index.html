@@ -29,6 +29,8 @@
             background-image: url("https://files.catbox.moe/k91ca4.jpg");
             background-size: cover;
             background-position: center;
+            position: sticky;
+            top: 0;
             }
         
         #background {
@@ -68,16 +70,23 @@
             align-items: center;
             }
         
+        #view5vw {
+            width: 100%;
+            height: 10vw;
+            margin: 0;
+            padding: 0;
+        }
+        
             #inputs {
             width: 90%;
             height: auto;
             background: #484d62;
-            margin: 0 5vw 0 5vw;
+            margin: 0 5vw 10vw 5vw;
             padding: 0 0 3vw 0;
             text-align: center;
             border-radius: 2vw;
             box-shadow: 0 0 8vw 0 rgba(0,0,0,0.4);
-            transform:translateY(-5vw);
+            z-index: 1;
             }
 
             #fullname, #id {
@@ -128,11 +137,12 @@
             width: auto;
             height: auto;
             margin: 0;
-            padding: 3vw 0 0 0;
+            padding: 0;
             display: flex;
             flex-wrap: wrap;
             gap: 6vw;
             justify-content: center;
+            z-index: 1;
             }
         
             #card {
@@ -148,27 +158,40 @@
             }
         
             #card:active {
-            opacity: 1;
+            border: 0.5vw solid rgba(255,255,255,0.5);
             }
+        
+        #ag {
+            
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 2vw 0;
+        }
+        
+        #weight1, #weight2, #weight3 {
+            width: 2vw;         
+            display: flex;
+            flex: 1;
+        }
         
             #amount {
             color: #a3a8c0;
-            margin: 5vw 0 2vw 0;
+            margin: 0;
             padding: 0;
             font-size: 5vw;
             font-weight: bold;
             opacity: 90%;
             font-family: font;
-            text-align: center;
             }
         
             #gift {
+            
             color: #747990;
-            margin: 0 0 4vw 0;
+            margin: 0;
             padding: 0;
-            font-size: 5vw;
+            font-size: 3vw;
             font-family: font;
-            text-align: center;
             }
         
         #line {
@@ -295,7 +318,7 @@
  <p id="title">PUBG Mobile, Direct Top-Up</p>
         </div>
     </div>
-        
+        <div id="view5vw"></div>
     <div id="inputs">
   <p id="fullname">Full Name <span id="oblg">*</span></p>
     <input type="text" id="inputFullName" placeholder="Bader Charaf">
@@ -356,6 +379,18 @@ data.forEach(item => {
   const card = document.createElement('div');
   card.id = 'card';
   
+  const ag = document.createElement('div');
+  ag.id = 'ag';
+  
+  const weight1 = document.createElement('div');
+  weight1.id = 'weight1';
+  
+  const weight2 = document.createElement('div');
+  weight2.id = 'weight2';
+  
+  const weight3 = document.createElement('div');
+  weight3.id = 'weight3';
+  
   const amount = document.createElement('p');
   amount.id = 'amount';
   amount.textContent = item.amount;
@@ -371,8 +406,12 @@ data.forEach(item => {
   price.id = 'price';
   price.textContent = item.price;
   
-  card.appendChild(amount);
-  card.appendChild(gift);
+  ag.appendChild(weight1);
+  ag.appendChild(amount);
+  ag.appendChild(weight2);
+  ag.appendChild(gift);
+  ag.appendChild(weight3);
+  card.appendChild(ag);
   card.appendChild(line);
   card.appendChild(price);
   buttons.appendChild(card);
@@ -405,7 +444,6 @@ buy.scrollIntoView({ behavior: 'smooth' });
      sendData();
     } else {
    Toast("Please select an amount");
-buttons.scrollIntoView({behavior: 'smooth'});
     } } else {
    Toast("please enter a valid PUBG ID");
   scrollTo();
@@ -415,7 +453,7 @@ buttons.scrollIntoView({behavior: 'smooth'});
     } });
 
   function scrollTo() {
-thumbnail.scrollIntoView({behavior: 'smooth'});
+view5vw.scrollIntoView({behavior: 'smooth'});
       }
 
     function sendData() {
@@ -482,6 +520,13 @@ socialMediaList.forEach(item => {
     toast.style.opacity = "0";
       }, 2000); }
 
+</script><script>
+    
+    window.addEventListener('scroll', () => {
+    var scroll = (window.scrollY * 100) / window.innerWidth;
+    var opacity = 1 - ((scroll - 10) / 45);
+    thumbnail.style.opacity = opacity;
+    });
 </script>
 </body>
 </html>
