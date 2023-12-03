@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>SHOPUBG</title>
@@ -22,78 +22,66 @@
             }
         
         #name {
-            color: #a60;
-            margin: 0 auto;
-            padding: 5vw 0;
-            width: fit-content;
+            color: #ddd;
+            margin: 0;
+            padding: 5vw;
+            width: auto;
             height: auto;
             font-size: 6vw;
             font-family: font;
             font-weight: bold;
+            background: #222;
             }
+        
+        #line {
+            width: auto;
+            height: 1px;
+            background: #444;
+        }
         
         #it {
             background: #222;
             width: 100%;
             height: auto;
-            transform:translateY(1px);
+            display: flex;
+            margin: 0;
+            padding: 0;
         }
         
-        #icon {
-            width: 40vw;
-            height: 40vw;
-            margin: 10vw auto;
+        #thumbnail {
+            min-width: 30vw;
+            height: 30vw;
+            margin: 5vw;
             padding: 0;
             border-radius: 2vw;
             background-image: url("https://files.catbox.moe/jbkxi7.jpg");
             background-size: cover;
             background-position: center;
+            border: 0.5vw solid #aaa;
         }
         
             #title {
-            margin: 0 auto;
+            margin: 8vw 5vw 0 0;
             padding: 0;
-            width: fit-content;
+            width: auto;
             height: auto;
             font-size: 5vw;
             font-weight: bold;
             word-wrap: break-word;
-            color: #ddd;
+            color: #ccc;
             font-family: font;
-            }
-        
-        #forInput {
-            display: flex;
-            background-image: linear-gradient(to bottom, #222 40%, #f4f4f4 20%);
-            width: 100%;
-            height: auto;
-            margin: 0;
-            padding: 10vw 0 0 0;
-        }
-        
-            #inputs {
-            width: 90%;
-            height: auto;
-            background: #fff;
-            margin: 5vw auto;
-            padding: 0;
-            text-align: center;
-            border-radius: 2vw;
-            box-shadow: 0 0 4vw 0 rgba(0,0,0,0.15);
-
-  
             }
 
             #fullname, #id {
             font-weight: bold;
             color: #444;
-            width: 75vw;
+            width: auto;
             height: auto;
             font-size: 4vw;
-            margin: 4vw auto 3vw auto;
+            margin: 6vw 8vw 3vw 8vw;
             padding: 0;
             box-sizing: border-box;
-            text-align: right;
+            text-align: left;
             font-family: font;
             }
 
@@ -102,55 +90,59 @@
             }
 
             #inputFullName, #inputId {
-            width: 80vw;
+            width: auto;
             height: 13vw;
-            margin: 0 0 2vw 0;
+            margin: 0 5vw;
             padding: 3vw 4vw;
             box-sizing: border-box;
             background: none;
-            border: 0.5vw solid #d6d6d8;
+            border: 0.5vw solid #c6d0e9;
             border-radius: 1vw;
             outline: none;
             color: #333;
             font-weight: bold;
             font-size: 4.5vw;
             }
-        
+
             ::placeholder {
             color: #ccc;
             }
         
             #notice {
             padding: 0;
-            margin: 1vw 0 3vw 0;
+            margin: 4vw 0 10vw 0;
             color: #666;
             font-size: 3.5vw;
             font-family: font;
+            text-align: center;
+            font-weight: bold;
             }
 
             #buttons {
             width: auto;
             height: auto;
-            margin: 5vw 0 0 0;
+            margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
-            gap: 6vw;
+            flex-wrap: wrap;
+            gap: 4vw;
+            justify-content: center;
             }
         
-            #card {
+            #button {
             background: #437fc7;
-            width: 90%;
-            height: 15vw;
-            border-radius: 2vw;
-            margin: 0 auto;
+            background: #555;
+            width: 44vw;
+            height: 12vw;
+            border-radius: 1vw;
+            margin: 0;
             padding: 0;
-            box-shadow: 0 0.5vw 1.5vw 0 rgba(0,0,0,0.3);
+            box-shadow: 0 0.5vw 1vw 0 rgba(0,0,0,0.2);
             display: flex;
             align-items: center;
                         }
         
-            #card:active {
+            #button:active {
             background: #009400;
             }
         
@@ -164,14 +156,13 @@
             color: #fff;
             margin: 0;
             padding: 0;
-            font-size: 5vw;
+            font-size: 4vw;
             font-weight: bold;
-            opacity: 90%;
+            opacity: 80%;
             font-family: font;
             }
         
             #gift {
-            
             color: #fff;
             opacity: 40%;
             margin: 0;
@@ -179,36 +170,33 @@
             font-size: 4vw;
             font-family: font;
             }
-        
-        #line {
-            background: #fff;
-            opacity: 30%;
-            width: 0.3vw;
-            height: 100%;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        
-        #price {
-            text-align: center;
-            color: #fff;
-            opacity: 90%;
-            margin: 0;
+
+        #valuePrice {
+            background: #eee;
+            border: 0.5vw solid #bbb;
+            width: 30vw;
+            height: 12vw;
+            margin: 10vw auto 0 auto;
             padding: 0;
-            font-size: 4vw;
+            color: #777;
+            font-size: 4.5vw;
             font-weight: bold;
             font-family: font;
-            width: 30%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0vw 2vw 0 rgba(0,0,0,0.1);
+            border-radius: 1vw;
         }
         
         #buy {
             margin: 10vw auto;
             padding: 0;
-            width: 80vw;
+            width: 90vw;
             height: 15vw;
             background: #31a085;
             box-sizing: border-box;
-            border-radius: 8vw;
+            border-radius: 1vw;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -217,11 +205,11 @@
             font-size: 4.5vw;
             font-family: font;
             transition: background 0.4s ease;
-            box-shadow: 0 0 2vw 0 rgba(0,0,0,0.3);
+            box-shadow: 0 0 1vw 0 rgba(0,0,0,0.2);
             }
         
             #buy:active {
-            background: #3185a0;
+            background: #68cfb5;
             }
 
         #footer {
@@ -233,7 +221,7 @@
         }
 
   #copyright {
-      margin: 5vw 0 0 0;
+      margin: 10vw 0 0 0;
       padding: 0;      
       color: #a3a8c0;
       transition: background 0.3s ease;
@@ -242,16 +230,38 @@
       text-align: center;
   }
   
+  #buttonsFooter {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 7vw 0;
+      align-items: center;
+    }
+
+  #buttonFooter {
+      width: fit-content;
+      height: auto;
+      color: #ccc;
+      font-family: font;
+      font-size: 4vw;
+      margin: 0 auto;
+      padding: 1vw 3vw;
+  }
+  
+  #buttonFooter:active {
+      background: #222;
+  }
+
       #sml {
-            margin: 0;
-            padding: 5vw;
+            margin: 0 0 8vw 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             gap: 3vw;
         }
         
         #smb {
-            width: auto;
+            width: 10vw;
             height: 10vw;
             margin: 0;
             padding: 2vw;
@@ -273,7 +283,7 @@
       text-align: center;
       font-family: font;
       font-size: 4vw;
-      border-radius: 2vw;
+      border-radius: 1vw;
       position: fixed;
       z-index: 1;
       bottom: 5vw;
@@ -282,32 +292,30 @@
       transition: opacity 0.4s ease;
       box-sizing: border-box;
       }
-  
+
 </style>
 </head>
 <body>
             <p id="name">SHOPUBG</p>
+            <div id="line"></div>
             <div id="it">
-        <div id="icon"></div>
+        <div id="thumbnail"></div>
  <p id="title">PUBG Mobile, Direct Top-Up</p>
     </div>
-        <div id="forInput">
-            <div id="inputs">
-            
-  <p id="fullname"><span id="oblg">*</span> إسمك الكامل</p>
+    <div id="topInputs"></div>
+
+  <p id="fullname">Full Name <span id="oblg">*</span></p>
     <input type="text" id="inputFullName" placeholder="Bader Charaf">
-  <p id="id"><span id="oblg">*</span> معرف اللاعب</p>
+  <p id="id">PUBG ID <span id="oblg">*</span></p>
     <input type="number" id="inputId" placeholder="0123456789">
     <p id="notice">نوصيك بنسخ ولصق المعرف بدل كتابته يدويا</p>
-    </div>
-    </div>
-    
+
     <div id="buttons"></div>
-
-  <p id="buy">إرسال الطلب (عبر واتساب)</p>
-
+  <p id="valuePrice"></p>
+  <p id="buy">BUY (WhatsApp)</p>
   <div id="footer">
-      <p id="copyright">© 2023 SHOPUBG. All Rights Reserved.</p>
+      <p id="copyright">Copyright © 2023 SHOPUBG. All Rights Reserved.</p>
+      <div id="buttonsFooter"></div>
       <div id="sml"></div>
   </div>
     <p id="toast"></p>
@@ -351,8 +359,8 @@ const data = [{
 
 data.forEach(item => {
 
-  const card = document.createElement('div');
-  card.id = 'card';
+  const button = document.createElement('div');
+  button.id = 'button';
   
   const weight1 = document.createElement('div');
   weight1.id = 'weight1';
@@ -371,41 +379,33 @@ data.forEach(item => {
   gift.id = 'gift';
   gift.textContent = item.gift;
   
-  const line = document.createElement('div');
-  line.id = 'line';
+  button.appendChild(weight1);
+  button.appendChild(amount);
+  button.appendChild(weight2);
+  button.appendChild(gift);
+  button.appendChild(weight3);
+  buttons.appendChild(button);
   
-  const price = document.createElement('p');
-  price.id = 'price';
-  price.textContent = item.price;
+  button.addEventListener('click', () => {
   
-  card.appendChild(weight1);
-  card.appendChild(amount);
-  card.appendChild(weight2);
-  card.appendChild(gift);
-  card.appendChild(weight3);
-  card.appendChild(line);
-  card.appendChild(price);
-  buttons.appendChild(card);
+  valuePrice.style.display = "flex";
   
-  card.addEventListener('click', function() {
-    const cards = document.querySelectorAll('#card');
-    
-    cards.forEach(otherCard => {
-        otherCard.style.background = "";
+  valuePrice.textContent = item.price;
+  
+    const buttons = document.querySelectorAll('#button');
+
+    let applied = 0;
+
+    buttons.forEach(item => {
+        item.style.background = "";
+        applied++
+        if (applied === buttons.length) {
+        button.style.background = "#009400";
+        }
     });
 
-        card.style.background = "#009400";
-        
     isSelect = item.amount;
-    
-    let ifnv = inputFullName.value.length;
-    let idv = inputId.value.length;
-    
-    if (ifnv > 6) {
-    if (idv > 8 && idv < 13) {
-buy.scrollIntoView({ behavior: 'smooth' });
-      } else { scrollTo(); }
-    } else { scrollTo(); }
+ 
   }); });
 
 </script><script>
@@ -430,7 +430,7 @@ buy.scrollIntoView({ behavior: 'smooth' });
     } });
 
   function scrollTo() {
-forInput.scrollIntoView({behavior: 'smooth'});
+topInputs.scrollIntoView({behavior: 'smooth'});
       }
 
     function sendData() {
@@ -440,7 +440,12 @@ AMOUNT:  ${isSelect}
 %0A- - - - - - - -%0A
 ID:  ${inputId.value}`;
 
-window.location.href=text;
+    setTimeout( () => {
+    inputFullName.value = "";
+    inputId.value = "";
+    window.location.href = text;
+    }, 500);
+
 }
 
 </script><script>
@@ -485,6 +490,33 @@ socialMediaList.forEach(item => {
       setTimeout(function(){
     toast.style.opacity = "0";
       }, 2000); }
+
+</script><script>
+        
+const buttonsFooterData = [{
+        "title": "حول الدفع",
+        "path": "payment"
+    },{
+        "title": "حول المطور",
+        "path": "developer"
+    },{
+        "title": "الهدايا",
+        "path": "gifts"
+    }]
+
+buttonsFooterData.forEach(item => {
+
+  const buttonFooter = document.createElement('p');
+  buttonFooter.id = 'buttonFooter';
+  buttonFooter.textContent = item.title;
+  
+  buttonsFooter.appendChild(buttonFooter);
+  
+  buttonFooter.addEventListener('click', () => {
+  window.open("https://shopubg.store/about-" + item.path + ".html");
+  });
+  
+  });
 
 </script>
 </body>
